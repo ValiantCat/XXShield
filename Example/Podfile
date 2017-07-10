@@ -1,0 +1,11 @@
+#use_frameworks!
+
+target 'XXShield_Example' do
+  pod 'XXShield', :path => '../'
+
+  target 'XXShield_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
