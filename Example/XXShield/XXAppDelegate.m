@@ -2,8 +2,8 @@
 //  XXAppDelegate.m
 //  XXShield
 //
-//  Created by aiqiuqiu on 07/10/2017.
-//  Copyright (c) 2017 aiqiuqiu. All rights reserved.
+//  Created by XXShield on 07/10/2017.
+//  Copyright (c) 2017 XXShield. All rights reserved.
 //
 
 #import "XXAppDelegate.h"

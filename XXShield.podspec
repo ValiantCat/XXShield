@@ -26,15 +26,71 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/ValiantCat/XXShield.git', :tag => s.version.to_s }
 
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '7.0'
 
-  s.source_files = 'XXShield/Classes/**/*'
+   s.source_files = 'XXShield/Classes/**/*'
+   s.requires_arc = true
 
-  # s.resource_bundles = {
-  #   'XXShield' => ['XXShield/Assets/*.png']
-  # }
+  # s.default_subspec = 'source'
+  #public
+    # s.subspec 'source' do |source|
+    #
+    #
+    #   source.dependency 'XXShield/SDK'
+    #   source.dependency 'XXShield/FoundationContainer'
+    #   source.dependency 'XXShield/KVO'
+    #   source.dependency 'XXShield/Notification'
+    #   source.dependency 'XXShield/NSNull'
+    #   source.dependency 'XXShield/NSTimer'
+    #   source.dependency 'XXShield/SmartKit'
+    #   source.dependency 'XXShield/DanglingPointerXXShield'
+    #   source.dependency 'XXShield/Record'
+    #   source.dependency 'XXShield/Swizzling'
+    # end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  #  private
+    # s.subspec 'SDK' do |sdk|
+    #   sdk.source_files = 'XXShield/Classes/*'
+    #   sdk.requires_arc = true
+    # end
+    # s.subspec 'FoundationContainer' do |foundationContainer|
+    #   foundationContainer.source_files = 'XXShield/Classes/FoundationContainer/*'
+    #   foundationContainer.requires_arc = true
+    # end
+    # s.subspec 'KVO' do |kvo|
+    #   kvo.source_files = 'XXShield/Classes/KVO/*'
+    #   kvo.requires_arc = true
+    # end
+    # s.subspec 'Notification' do |notification|
+    #   notification.source_files = 'XXShield/Classes/Notification/*'
+    #   notification.requires_arc = true
+    # end
+    # s.subspec 'NSNull' do |nSNull|
+    #   nSNull.source_files = 'XXShield/Classes/XXShield/NSNull/*'
+    #   nSNull.requires_arc = true
+    # end
+    # s.subspec 'NSTimer' do |nSTimer|
+    #   nSTimer.source_files = 'XXShield/Classes/NSTimer/*'
+    #   nSTimer.requires_arc = true
+    # end
+    # s.subspec 'SmartKit' do |smartKit|
+    #   smartKit.source_files = 'XXShield/Classes/SmartKit/*'
+    #   smartKit.requires_arc = true
+    # end
+    # s.subspec 'DanglingPointerXXShield' do |danglingPointerXXShield|
+    #   danglingPointerXXShield.source_files = 'XXShield/Classes/DanglingPointerXXShield/*'
+    #   danglingPointerXXShield.requires_arc = ['XXShield/Classes/DanglingPointerXXShield/XXDanglingPonterClassService.m',
+    #     'XXShield/Classes/DanglingPointerXXShield/ForwordingCenterForDanglingPoint.m'
+    #   ]
+    # end
+    # s.subspec 'Record' do |record|
+    #   record.source_files = 'XXShield/Classes/Record/*'
+    #   record.requires_arc = true
+    # end
+    # s.subspec 'Swizzling' do |swi|
+    #   swi.source_files = 'XXShield/Classes/Swizzle/*'
+    #   swi.requires_arc = true
+    # end
 
 
    s.dependency 'libextobjc'

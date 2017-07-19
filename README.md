@@ -1,6 +1,6 @@
 # XXShield
 
-[![CI Status](http://img.shields.io/travis/aiqiuqiu/XXShield.svg?style=flat)](https://travis-ci.org/aiqiuqiu/XXShield)
+[![CI Status](http://img.shields.io/travis/XXShield/XXShield.svg?style=flat)](https://travis-ci.org/XXShield/XXShield)
 [![Version](https://img.shields.io/cocoapods/v/XXShield.svg?style=flat)](http://cocoapods.org/pods/XXShield)
 [![License](https://img.shields.io/cocoapods/l/XXShield.svg?style=flat)](http://cocoapods.org/pods/XXShield)
 [![Platform](https://img.shields.io/cocoapods/p/XXShield.svg?style=flat)](http://cocoapods.org/pods/XXShield)
@@ -22,7 +22,7 @@ pod "XXShield"
 
 ## Author
 
-aiqiuqiu, jiangyi04@meituan.com
+XXShield, jiangyi04@meituan.com
 
 ## License
 
