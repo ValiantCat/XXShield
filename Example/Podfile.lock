@@ -37,7 +37,11 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - XXShield (0.1.0):
+  - XXShield (1.0.0):
+    - Crashlytics
+    - libextobjc
+    - XXShield/no-arc (= 1.0.0)
+  - XXShield/no-arc (1.0.0):
     - Crashlytics
     - libextobjc
 
@@ -52,7 +56,7 @@ SPEC CHECKSUMS:
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  XXShield: 73c6e2129c06dff46d883f56bf480ac38700b27a
+  XXShield: 6c25c9e136bcae3fdce502681ed6bd22a7338c47
 
 PODFILE CHECKSUM: 7c8242abc80381bb25da30c727fe7766618c66d7
 
