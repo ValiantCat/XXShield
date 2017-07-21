@@ -181,32 +181,6 @@ static BOOL theCFunctionName () {                                               
                     }
 #define XXStaticHookEnd_SaveOri(P) __xxHookClassEnd P = __xx_hook_orgin_function;  return YES;   }             \
 
-// 拦截动态类 但是不添加函数
-#define XXDynamicHookClass(theHookClass, returnType,theSEL, ...)                                                \
-        ^{                                                                                                      \
-        __XXHookClassBegin(theHookClass,                                                                        \
-                           1,                                                                                   \
-                           0,                                                                                   \
-                            ,                                                                                   \
-                           returnType,                                                                          \
-                           theSEL,                                                                              \
-                           id self,                                                                             \
-                           ##__VA_ARGS__)                                                                       \
-
-
-#define XXDynamicHookEnd    __xxHookClassEnd return YES; }();
-
-// 拦截动态类 添加函数
-#define XXDynamicAddMethodAndHookClass(theHookClass, returnType,returnValue,theSEL, ...)                        \
-        ^{                                                                                                      \
-        __XXHookClassBegin(theHookClass,                                                                        \
-                            1,                                                                                  \
-                            1,                                                                                  \
-                            returnValue,                                                                        \
-                            returnType,                                                                         \
-                            theSEL,                                                                             \
-                            id self,                                                                            \
-                            ##__VA_ARGS__)                                                                      \
 
 
 #define NSSelectorFromWordsForEach(INDEX,VALUE)                                                                 \

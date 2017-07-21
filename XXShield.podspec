@@ -34,20 +34,22 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
 
   s.public_header_files   = "XXShield/Classes/*.h"
-  s.private_header_files = 'XXShield/Classes/template/*.x'
+  s.private_header_files = 'XXShield/Classes/template/*.h'
   s.source_files          = "XXShield/Classes/*/*.{h,m,mm}", "XXShield/Classes/*.{h,m,mm}"
 
-  non_arc_files = "XXShield/Classes/DanglingPointerShield/NSObject+DanglingPointer.m"
-
-  s.exclude_files = non_arc_files
-  s.requires_arc = true
-  s.subspec 'no-arc' do |sna|
-    sna.requires_arc = false
-    sna.source_files = non_arc_files
-  end
-
-
-
+  s.requires_arc = ['XXShield/Classes/*.m', 'XXShield/Classes/FoundationContainer/*.m',
+      'XXShield/Classes/KVO/*.m','XXShield/Classes/NSTimer/*.m', 'XXShield/Classes/Notification/*.m' , 'XXShield/Classes/NSNull/*.m',
+       'XXShield/Classes/Record/*.m' , 'XXShield/Classes/SmartKit/*.m'  , 'XXShield/Classes/Swizzle/*.m',
+    'XXShield/Classes/DanglingPointerShield/ForwordingCenterForDanglingPoint.m' ,'XXShield/Classes/DanglingPointerShield/XXDanglingPonterClassService.m'
+  ]
+  # non_arc_files = "XXShield/Classes/DanglingPointerShield/NSObject+DanglingPointer.m" , "XXShield/Classes/DanglingPointerShield/*.h"
+  #
+  # s.exclude_files = non_arc_files
+  # s.requires_arc = true
+  # s.subspec 'no-arc' do |sna|
+  #   sna.requires_arc = false
+  #   sna.source_files = non_arc_files
+  # end
 
   s.dependency 'libextobjc'
   s.dependency 'Crashlytics'

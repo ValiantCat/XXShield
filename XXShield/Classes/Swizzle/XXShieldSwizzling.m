@@ -82,13 +82,11 @@ Class shield_hook_getClassFromObject(id object)
 }
 
 #ifndef __LP64__
-#define getsectbynamefromheader_ getsectbynamefromheader
-#define section_ section
-#define mach_header_ mach_header
+
+    #define mach_header_ mach_header
 #else
-#define getsectbynamefromheader_ getsectbynamefromheader_64
-#define section_ section_64
-#define mach_header_ mach_header_64
+
+    #define mach_header_ mach_header_64
 #endif
 
 void shield_hook_load_group(NSString* groupName)
