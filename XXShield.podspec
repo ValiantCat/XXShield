@@ -34,6 +34,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '7.0'
 
   s.public_header_files   = "XXShield/Classes/*.h"
+  s.private_header_files = 'XXShield/Classes/template/*.x'
   s.source_files          = "XXShield/Classes/*/*.{h,m,mm}", "XXShield/Classes/*.{h,m,mm}"
 
   non_arc_files = "XXShield/Classes/DanglingPointerShield/NSObject+DanglingPointer.m"

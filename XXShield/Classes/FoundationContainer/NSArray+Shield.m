@@ -27,15 +27,15 @@
  */
 
 XXStaticHookPrivateClass(__NSSingleObjectArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
-    #include "NSArrayObjectAtIndex.x"
+    #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 XXStaticHookPrivateClass(__NSArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
-    #include "NSArrayObjectAtIndex.x"
+    #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 XXStaticHookPrivateClass(__NSArray0, NSArray *, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
-    #include "NSArrayObjectAtIndex.x"
+    #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 
@@ -57,25 +57,25 @@ XXStaticHookEnd
 
 XXStaticHookPrivateMetaClass(__NSSingleObjectArrayI, NSArray *, ProtectCont, NSArray *,
                              @selector(arrayWithObjects:count:), (const id *)objects, (NSUInteger)cnt) {
-    #include "NSArrayWithObjects.x"
+    #include "NSArrayWithObjects.h"
 }
 XXStaticHookEnd
 
 XXStaticHookPrivateMetaClass(__NSArrayI, NSArray *, ProtectCont, NSArray *, @selector(arrayWithObjects:count:),
                              (const id *)objects, (NSUInteger)cnt) {
-    #include "NSArrayWithObjects.x"
+    #include "NSArrayWithObjects.h"
 }
 XXStaticHookEnd
 
 XXStaticHookPrivateMetaClass(__NSArray0, NSArray *, ProtectCont, NSArray *, @selector(arrayWithObjects:count:),
                              (const id *)objects, (NSUInteger)cnt) {
-    #include "NSArrayWithObjects.x"
+    #include "NSArrayWithObjects.h"
 }
 XXStaticHookEnd
 
 XXStaticHookPrivateClass(__NSPlaceholderArray, NSArray *, ProtectCont, NSArray *, @selector(initWithObjects:count:),
                              (const id *)objects, (NSUInteger)cnt) {
-    #include "NSArrayWithObjects.x"
+    #include "NSArrayWithObjects.h"
 }
 XXStaticHookEnd
 
