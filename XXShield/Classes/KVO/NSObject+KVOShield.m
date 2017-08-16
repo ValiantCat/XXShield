@@ -35,7 +35,7 @@ static void(*__xx_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
 - (void)dealloc {
     @autoreleasepool {
         
-        NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap;
+        NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
         for (NSString *keyPath in kvoinfos) {
             // call original  IMP
             __xx_hook_orgin_function_removeObserver(_observed,@selector(removeObserver:forKeyPath:),self, keyPath);
