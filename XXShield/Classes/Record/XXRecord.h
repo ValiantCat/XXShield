@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XXShieldDefine.h"
-
-
+#import <XXShield/XXShieldSDK.h>
 
 @interface XXRecord : NSObject
 

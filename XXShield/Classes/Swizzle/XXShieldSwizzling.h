@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import "metamacros.h"
+#import "XXMetamacros.h"
 
+#define XXForOCString(_) @#_
 
 #define XXSEL2Str(sel) NSStringFromSelector(sel)
 

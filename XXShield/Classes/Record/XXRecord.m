@@ -7,7 +7,7 @@
 //
 
 #import "XXRecord.h"
-#import <Crashlytics/Crashlytics.h>
+//#import <Crashlytics/Crashlytics.h>
 
 @implementation XXRecord
 
@@ -23,7 +23,7 @@
 
 + (void)recordFatalWithError:(nonnull NSError *)error userinfo:(nullable NSDictionary<NSString *, id> *)userInfo {
     NSLog(@"crashLytics catch fatalError - error is %@, additional UserInfo is %@",error,userInfo);
-    [[Crashlytics sharedInstance] recordError:error withAdditionalUserInfo:userInfo];
+//    [[Crashlytics sharedInstance] recordError:error withAdditionalUserInfo:userInfo];
 }
 
 @end

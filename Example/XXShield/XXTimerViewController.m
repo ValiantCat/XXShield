@@ -9,7 +9,7 @@
 #import "XXTimerViewController.h"
 #import "Person.h"
 #import "Student.h"
-#import "XXShieldSDK.h"
+#import <XXShield/XXShield.h>
 
 @interface XXTimerViewController ()
 @property (nonatomic, strong) NSTimer *timer;

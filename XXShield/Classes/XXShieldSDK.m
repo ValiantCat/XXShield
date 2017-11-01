@@ -7,12 +7,11 @@
 //
 
 
-#import <objc/runtime.h>
 #import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 #import "XXShieldSDK.h"
 #import "NSObject+Forward.h"
 #import "NSCache+Shield.h"
-#import "NSNull+Shield.h"
 #import "NSMutableDictionary+Shield.h"
 #import "NSMutableArray+Shield.h"
 #import "NSDictionary+Shield.h"
@@ -24,24 +23,12 @@
 #import "XXDanglingPonterClassService.h"
 #import "XXShieldSwizzling.h"
 
-#define XXForOCString(_) @#_
-
-@interface XXShieldSDK ()
-+ (void)registerUnrecognizedSelector;
-+ (void)registerContainer;
-+ (void)registerNSNull;
-+ (void)registerKVO;
-+ (void)registerNotification;
-+ (void)registerTimer;
-
-
-@end
-
 @implementation XXShieldSDK
 
 + (void)registerStabilitySDK {
     [self registerStabilityWithAbility:(EXXShieldTypeExceptDangLingPointer)];
 }
+
 + (void)registerStabilityWithAbility:(EXXShieldType)ability {
     if (ability & EXXShieldTypeUnrecognizedSelector) {
         [self registerUnrecognizedSelector];
@@ -62,15 +49,13 @@
         [self registerTimer];
     }
 }
+
 + (void)registerStabilityWithAbility:(EXXShieldType)ability withClassNames:(NSArray *)arr {
     if ((ability & EXXShieldTypeDangLingPointer) && [arr count]) {
         [self registerDanglingPointer:arr];
     }
     [self registerStabilityWithAbility:ability];
-    
-  
 }
-
 
 + (void)registerNSNull {
     static dispatch_once_t onceToken;
@@ -78,25 +63,28 @@
         shield_hook_load_group(XXForOCString(ProtectNull));
     });
 }
+
 + (void)registerContainer {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shield_hook_load_group(XXForOCString(ProtectCont));
     });
-    
 }
+
 + (void)registerUnrecognizedSelector {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shield_hook_load_group(XXForOCString(ProtectFW));
     });
 }
+
 + (void)registerKVO {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shield_hook_load_group(XXForOCString(ProtectKVO));
     });
 }
+
 + (void)registerNotification {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -105,8 +93,8 @@
             shield_hook_load_group(XXForOCString(ProtectNoti));
         }
     });
-    
 }
+
 + (void)registerTimer {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -126,7 +114,6 @@
     defaultSwizzlingOCMethod([NSObject class], NSSelectorFromString(@"dealloc"), @selector(ljdanglingPointer_dealloc));
     
 }
-
 
 @end
 

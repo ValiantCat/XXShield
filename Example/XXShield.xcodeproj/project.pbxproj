@@ -20,21 +20,20 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		76DBF7149404A72D5BEE705B /* libPods-XXShield_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0E13A575A2EF6C5BDAD505 /* libPods-XXShield_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		CE9644041F1F4FA2004EB2F2 /* XXTestNull.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644031F1F4FA2004EB2F2 /* XXTestNull.m */; };
-		CE9644061F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644051F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m */; };
-		CE9644081F1F50A1004EB2F2 /* XXTestsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644071F1F50A1004EB2F2 /* XXTestsContainer.m */; };
+		A052D4DFCCBB9E5AC22A2B54 /* Pods_XXShield_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */; };
+		C59997AEF8BEC92B666B22AB /* Pods_XXShield_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */; };
+		CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */; };
+		CE8331A51FA9661400CA41A4 /* NullSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A41FA9661400CA41A4 /* NullSpec.m */; };
+		CE8331A81FA9663000CA41A4 /* SDKSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A71FA9663000CA41A4 /* SDKSetup.m */; };
 		CE96440C1F1F50FC004EB2F2 /* XXNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96440B1F1F50FC004EB2F2 /* XXNotificationObserver.m */; };
 		CE96440F1F1F5124004EB2F2 /* XXNotificationObserved.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96440E1F1F5124004EB2F2 /* XXNotificationObserved.m */; };
-		CE9644131F1F52C7004EB2F2 /* XXTestNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644121F1F52C7004EB2F2 /* XXTestNotification.m */; };
 		CE9644161F1F535F004EB2F2 /* XXKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644151F1F535F004EB2F2 /* XXKVOViewController.m */; };
 		CE96441B1F1F5390004EB2F2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644181F1F5390004EB2F2 /* Person.m */; };
 		CE96441C1F1F5390004EB2F2 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96441A1F1F5390004EB2F2 /* Student.m */; };
 		CE96441F1F1F539A004EB2F2 /* XXDangLingPointerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96441E1F1F539A004EB2F2 /* XXDangLingPointerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE9644221F1F53D2004EB2F2 /* XXTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644211F1F53D2004EB2F2 /* XXTimerViewController.m */; };
 		CE9644251F1F53DB004EB2F2 /* XXDangLingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644241F1F53DB004EB2F2 /* XXDangLingObject.m */; };
-		CFEF7490D7B9FE3C91D628A9 /* libPods-XXShield_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DBAF0DA0352AA5B2CD57F1 /* libPods-XXShield_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +48,9 @@
 
 /* Begin PBXFileReference section */
 		24F7ABBBD291BB26F5220B32 /* Pods-XXShield_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3A0E13A575A2EF6C5BDAD505 /* libPods-XXShield_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXShield_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA5DDFEFC7DA2D12EBD18CC /* Pods-XXShield_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		46EEA05012F18039114BAB98 /* XXShield.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XXShield.podspec; path = ../XXShield.podspec; sourceTree = "<group>"; };
+		413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXShield_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EEA05012F18039114BAB98 /* XXShield.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = XXShield.podspec; path = ../XXShield.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* XXShield_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXShield_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,11 +71,15 @@
 		605E5EA041E249575181AD27 /* Pods-XXShield_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example.release.xcconfig"; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		79DBAF0DA0352AA5B2CD57F1 /* libPods-XXShield_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXShield_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ED4B5E1A4E690247385A142 /* Pods-XXShield_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXShield_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E63806E16CFC48D7969CE1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CE9644031F1F4FA2004EB2F2 /* XXTestNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTestNull.m; sourceTree = "<group>"; };
+		CE10249D1FA8A18C00F0EDA7 /* XXShield_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXShield_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXSpec.swift; sourceTree = "<group>"; };
+		CE8331A41FA9661400CA41A4 /* NullSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NullSpec.m; sourceTree = "<group>"; };
+		CE8331A61FA9663000CA41A4 /* SDKSetup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKSetup.h; sourceTree = "<group>"; };
+		CE8331A71FA9663000CA41A4 /* SDKSetup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKSetup.m; sourceTree = "<group>"; };
 		CE9644051F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTestUnrecognizedSelector.m; sourceTree = "<group>"; };
 		CE9644071F1F50A1004EB2F2 /* XXTestsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTestsContainer.m; sourceTree = "<group>"; };
 		CE96440A1F1F50FC004EB2F2 /* XXNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXNotificationObserver.h; sourceTree = "<group>"; };
@@ -107,7 +110,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				CFEF7490D7B9FE3C91D628A9 /* libPods-XXShield_Example.a in Frameworks */,
+				A052D4DFCCBB9E5AC22A2B54 /* Pods_XXShield_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +121,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				76DBF7149404A72D5BEE705B /* libPods-XXShield_Tests.a in Frameworks */,
+				C59997AEF8BEC92B666B22AB /* Pods_XXShield_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,8 +167,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				79DBAF0DA0352AA5B2CD57F1 /* libPods-XXShield_Example.a */,
-				3A0E13A575A2EF6C5BDAD505 /* libPods-XXShield_Tests.a */,
+				413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */,
+				91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,9 +217,11 @@
 			children = (
 				CE9644091F1F50E1004EB2F2 /* NoticationCenter */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
-				CE9644031F1F4FA2004EB2F2 /* XXTestNull.m */,
 				CE9644051F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m */,
 				CE9644071F1F50A1004EB2F2 /* XXTestsContainer.m */,
+				CE8331A41FA9661400CA41A4 /* NullSpec.m */,
+				CE8331A61FA9663000CA41A4 /* SDKSetup.h */,
+				CE8331A71FA9663000CA41A4 /* SDKSetup.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -227,6 +232,8 @@
 				6003F5B7195388D20070C39A /* Tests-Info.plist */,
 				6003F5B8195388D20070C39A /* InfoPlist.strings */,
 				606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */,
+				CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */,
+				CE10249D1FA8A18C00F0EDA7 /* XXShield_Tests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,6 +315,7 @@
 				ORGANIZATIONNAME = aiqiuqiu;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
+						LastSwiftMigration = 0900;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -375,9 +383,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,13 +418,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XXShield_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		781938AC0F93748FA4A58294 /* [CP] Check Pods Manifest.lock */ = {
@@ -420,13 +436,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XXShield_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DFC84AFE18390AD724CB597 /* [CP] Embed Pods Frameworks */ = {
@@ -435,9 +454,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/XXShield/XXShield.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XXShield.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,10 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9644041F1F4FA2004EB2F2 /* XXTestNull.m in Sources */,
-				CE9644061F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m in Sources */,
-				CE9644081F1F50A1004EB2F2 /* XXTestsContainer.m in Sources */,
-				CE9644131F1F52C7004EB2F2 /* XXTestNotification.m in Sources */,
+				CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */,
+				CE8331A51FA9661400CA41A4 /* NullSpec.m in Sources */,
+				CE8331A81FA9663000CA41A4 /* SDKSetup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +643,7 @@
 			baseConfigurationReference = 3AA5DDFEFC7DA2D12EBD18CC /* Pods-XXShield_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -634,8 +656,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/XXShield_Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XXShield_Example.app/XXShield_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -646,6 +672,7 @@
 			baseConfigurationReference = 8ED4B5E1A4E690247385A142 /* Pods-XXShield_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -654,8 +681,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/XXShield_Tests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XXShield_Example.app/XXShield_Example";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XXShieldDefine.h"
+
+typedef NS_OPTIONS(NSUInteger, EXXShieldType) {
+    EXXShieldTypeUnrecognizedSelector = 1 << 1,
+    EXXShieldTypeContainer = 1 << 2,
+    EXXShieldTypeNSNull = 1 << 3,
+    EXXShieldTypeKVO = 1 << 4,
+    EXXShieldTypeNotification = 1 << 5,
+    EXXShieldTypeTimer = 1 << 6,
+    EXXShieldTypeDangLingPointer = 1 << 7,
+    EXXShieldTypeExceptDangLingPointer = (EXXShieldTypeUnrecognizedSelector | EXXShieldTypeContainer |
+                                          EXXShieldTypeNSNull| EXXShieldTypeKVO |
+                                          EXXShieldTypeNotification | EXXShieldTypeTimer)
+};
 
 @interface XXShieldSDK : NSObject
 
