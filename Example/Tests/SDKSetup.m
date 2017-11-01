@@ -6,8 +6,11 @@
 //  Copyright © 2017年 aiqiuqiu. All rights reserved.
 //
 
-#import "SDKSetup.h"
 #import <XXShield/XXShieldSDK.h>
+
+@interface SDKSetup : NSObject
+
+@end
 
 @implementation SDKSetup
 

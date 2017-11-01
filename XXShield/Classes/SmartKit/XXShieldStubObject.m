@@ -8,6 +8,7 @@
 
 #import "XXShieldStubObject.h"
 #import <objc/runtime.h>
+
 /**
  default Implement
 
@@ -20,8 +21,7 @@ int smartFunction(id target, SEL cmd, ...) {
     return 0;
 }
 
-@implementation XXShieldStubObject
-- (BOOL)addFunc:(SEL)sel {
+static BOOL __addMethod(Class clazz, SEL sel) {
     NSString *selName = NSStringFromSelector(sel);
     
     NSMutableString *tmpString = [[NSMutableString alloc] initWithFormat:@"%@", selName];
@@ -34,37 +34,29 @@ int smartFunction(id target, SEL cmd, ...) {
     NSMutableString *val = [[NSMutableString alloc] initWithString:@"i@:"];
     
     for (int i = 0; i < count; i++) {
-        
         [val appendString:@"@"];
     }
-    
     const char *funcTypeEncoding = [val UTF8String];
-    
-    return class_addMethod([XXShieldStubObject class], sel, (IMP)smartFunction, funcTypeEncoding);
+    return class_addMethod(clazz, sel, (IMP)smartFunction, funcTypeEncoding);
+}
+
+@implementation XXShieldStubObject
+
++ (XXShieldStubObject *)shareInstance {
+    static XXShieldStubObject *singleton;
+    if (!singleton) {
+        singleton = [XXShieldStubObject new];
+    }
+    return singleton;
+}
+
+- (BOOL)addFunc:(SEL)sel {
+    return __addMethod([XXShieldStubObject class], sel);
 }
 
 + (BOOL)addClassFunc:(SEL)sel {
-    NSString *selName = NSStringFromSelector(sel);
-    
-    NSMutableString *tmpString = [[NSMutableString alloc] initWithFormat:@"%@", selName];
-    
-    int count = (int)[tmpString replaceOccurrencesOfString:@":"
-                                                withString:@"_"
-                                                   options:NSCaseInsensitiveSearch
-                                                     range:NSMakeRange(0, selName.length)];
-    
-    NSMutableString *val = [[NSMutableString alloc] initWithString:@"i@:"];
-    
-    for (int i = 0; i < count; i++) {
-        
-        [val appendString:@"@"];
-    }
-    
-    const char *funcTypeEncoding = [val UTF8String];
-    
     Class metaClass = objc_getMetaClass(class_getName([XXShieldStubObject class]));
-    
-    return class_addMethod(metaClass, sel, (IMP)smartFunction, funcTypeEncoding);
+    return __addMethod(metaClass, sel);
 }
 
 @end

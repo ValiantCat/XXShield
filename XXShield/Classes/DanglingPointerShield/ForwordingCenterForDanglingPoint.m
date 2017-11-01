@@ -19,7 +19,8 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    XXShieldStubObject *stub = [[XXShieldStubObject alloc] init];
+//    XXShieldStubObject *stub = [[XXShieldStubObject alloc] init];
+    XXShieldStubObject *stub = [XXShieldStubObject shareInstance];
     [stub addFunc:aSelector];
 
     return [[XXShieldStubObject class] instanceMethodSignatureForSelector:aSelector];

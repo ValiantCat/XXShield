@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "XXShieldSDK.h"
-#import "NSObject+Forward.h"
 #import "NSObject+KVOShield.h"
 #import "NSNotificationCenter+Shield.h"
 #import "NSTimer+Shield.h"
