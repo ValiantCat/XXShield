@@ -11,7 +11,6 @@
 #import <objc/runtime.h>
 #import "XXShieldSDK.h"
 #import "NSObject+KVOShield.h"
-#import "NSTimer+Shield.h"
 #import "NSObject+DanglingPointer.h"
 #import "XXDanglingPonterClassService.h"
 #import "XXShieldSwizzling.h"
@@ -105,7 +104,6 @@
     }
     [XXDanglingPonterClassService getInstance].classArr = avaibleList;
     defaultSwizzlingOCMethod([NSObject class], NSSelectorFromString(@"dealloc"), @selector(ljdanglingPointer_dealloc));
-    
 }
 
 @end

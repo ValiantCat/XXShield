@@ -310,7 +310,7 @@
 			attributes = {
 				CLASSPREFIX = XX;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = aiqiuqiu;
+				ORGANIZATIONNAME = ValiantCat;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						LastSwiftMigration = 0900;
