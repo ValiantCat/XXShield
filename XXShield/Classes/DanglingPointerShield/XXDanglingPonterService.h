@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XXDanglingPonterClassService : NSObject
+@interface XXDanglingPonterService : NSObject
 
 @property (nonatomic, copy) NSArray<NSString *> *classArr;
 

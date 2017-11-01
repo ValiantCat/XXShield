@@ -8,12 +8,13 @@
 
 #import "XXTimerViewController.h"
 #import "Person.h"
-#import "Student.h"
 #import <XXShield/XXShield.h>
 
 @interface XXTimerViewController ()
+
 @property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) Person   *timerPerson;
+@property (nonatomic, strong) Person *timerPerson;
+
 @end
 
 @implementation XXTimerViewController
@@ -25,9 +26,11 @@
         [XXShieldSDK registerStabilityWithAbility:(EXXShieldTypeTimer)];
     });
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self testTimer];
 }
+
 - (void)testTimer {
     // 1 正常使用
 //    self.timerPerson = [Person new];

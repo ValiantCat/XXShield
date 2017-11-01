@@ -10,6 +10,6 @@
 
 @interface NSObject (DanglingPointer)
 
-- (void)ljdanglingPointer_dealloc;
+- (void)xx_danglingPointer_dealloc;
 
 @end

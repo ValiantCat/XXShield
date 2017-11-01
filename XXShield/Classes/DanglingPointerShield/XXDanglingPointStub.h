@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ForwordingCenterForDanglingPoint : NSProxy
+@interface XXDanglingPointStub : NSProxy
 
 - (instancetype)init;
 

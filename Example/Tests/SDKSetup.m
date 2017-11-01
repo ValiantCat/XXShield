@@ -7,15 +7,23 @@
 //
 
 #import <XXShield/XXShieldSDK.h>
+#import "XXTestObject.h"
 
-@interface SDKSetup : NSObject
+@interface SDKSetup : NSObject <XXRecordProtocol>
 
 @end
 
 @implementation SDKSetup
 
 + (void)load {
+    [XXShieldSDK registerRecordHandler:[self new]];
+    [XXShieldSDK registerStabilityWithAbility:(EXXShieldTypeDangLingPointer) withClassNames:@[NSStringFromClass([XXTestObject class])]];
     [XXShieldSDK registerStabilitySDK];
+}
+
+- (void)recordWithReason:(NSError *)reason userInfo:(NSDictionary *)userInfo {
+    NSLog(@"----------------------------------------------------------------------------------------------------");
+    NSLog(@"crashLytics catch fatalError - error is %@, additional UserInfo is %@", reason, userInfo);
 }
 
 @end

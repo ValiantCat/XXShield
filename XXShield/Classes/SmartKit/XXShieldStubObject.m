@@ -45,7 +45,10 @@ static BOOL __addMethod(Class clazz, SEL sel) {
 + (XXShieldStubObject *)shareInstance {
     static XXShieldStubObject *singleton;
     if (!singleton) {
-        singleton = [XXShieldStubObject new];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            singleton = [XXShieldStubObject new];
+        });
     }
     return singleton;
 }

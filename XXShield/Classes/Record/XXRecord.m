@@ -7,9 +7,14 @@
 //
 
 #import "XXRecord.h"
-//#import <Crashlytics/Crashlytics.h>
 
 @implementation XXRecord
+
+static id<XXRecordProtocol> __record;
+
++ (void)registerRecordHandler:(id<XXRecordProtocol>)record {
+    __record = record;
+}
 
 + (void)recordFatalWithReason:(nullable NSString *)reason
                      userinfo:(nullable NSDictionary<NSString *, id> *)userInfo
@@ -17,13 +22,7 @@
     
     NSDictionary<NSString *, id> *errorInfo = @{ NSLocalizedDescriptionKey : (reason.length ? reason : @"未标识原因" )};
     NSError *error = [NSError errorWithDomain:@"com.xxshield" code:-type userInfo:errorInfo];
-    [self recordFatalWithError:error userinfo:userInfo];
-
-}
-
-+ (void)recordFatalWithError:(nonnull NSError *)error userinfo:(nullable NSDictionary<NSString *, id> *)userInfo {
-    NSLog(@"crashLytics catch fatalError - error is %@, additional UserInfo is %@",error,userInfo);
-//    [[Crashlytics sharedInstance] recordError:error withAdditionalUserInfo:userInfo];
+    [__record recordWithReason:error userInfo:userInfo];
 }
 
 @end

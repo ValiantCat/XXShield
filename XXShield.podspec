@@ -34,12 +34,9 @@ DESC
   'XXShield/Classes/DanglingPointerShield/ForwordingCenterForDanglingPoint.m',
   'XXShield/Classes/DanglingPointerShield/XXDanglingPonterClassService.m'
   ]
-  # non_arc_files = "XXShield/Classes/DanglingPointerShield/NSObject+DanglingPointer.m" , "XXShield/Classes/DanglingPointerShield/*.h"
   s.pod_target_xcconfig = {
     'CLANG_WARN_STRICT_PROTOTYPES' => 'NO',
     'SWIFT_VERSION' => '3.2'
   }
   
-#  s.dependency 'libextobjc'
-#  s.dependency 'Crashlytics'
 end

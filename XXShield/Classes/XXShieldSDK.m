@@ -7,13 +7,12 @@
 //
 
 
-#import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "XXShieldSDK.h"
-#import "NSObject+KVOShield.h"
 #import "NSObject+DanglingPointer.h"
-#import "XXDanglingPonterClassService.h"
+#import "XXDanglingPonterService.h"
 #import "XXShieldSwizzling.h"
+#import "XXRecord.h"
 
 @implementation XXShieldSDK
 
@@ -102,8 +101,12 @@
             [avaibleList removeObject:className];
         }
     }
-    [XXDanglingPonterClassService getInstance].classArr = avaibleList;
-    defaultSwizzlingOCMethod([NSObject class], NSSelectorFromString(@"dealloc"), @selector(ljdanglingPointer_dealloc));
+    [XXDanglingPonterService getInstance].classArr = avaibleList;
+    defaultSwizzlingOCMethod([NSObject class], NSSelectorFromString(@"dealloc"), @selector(xx_danglingPointer_dealloc));
+}
+
++ (void)registerRecordHandler:(nonnull id<XXRecordProtocol>)record { 
+    [XXRecord registerRecordHandler:record];
 }
 
 @end

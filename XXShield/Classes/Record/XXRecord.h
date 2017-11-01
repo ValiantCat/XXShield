@@ -12,23 +12,21 @@
 @interface XXRecord : NSObject
 
 /**
+ 注册汇报中心
+
+ @param record 汇报中心
+ */
++ (void)registerRecordHandler:(nullable id<XXRecordProtocol>)record;
+
+/**
  汇报Crash
 
  @param reason Sting 原因， maybe nil
  @param userInfo 额外的信息 maybe nil
  */
+
 + (void)recordFatalWithReason:(nullable NSString *)reason
                      userinfo:(nullable NSDictionary<NSString *, id> *)userInfo
                     errorType:(EXXShieldType)type;
-
-/**
- 汇报Crash
- 
- @param error Sting 原因， maybe nil
- @param userInfo 额外的信息 maybe nil
- */
-+ (void)recordFatalWithError:(nonnull NSError *)error
-                    userinfo:(nullable NSDictionary<NSString *, id> *)userInfo;
-
 
 @end

@@ -13,7 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"%@", [self findAllOf:[NSArray class]]);
+//    NSLog(@"%@", [self findAllOf:[NSArray class]]);
     
 //    WebCascadeList,
 //    CSSearchableItemCodedArray,
@@ -38,36 +38,36 @@
     return YES;
 }
 
-- (NSArray *)findAllOf:(Class)defaultClass {
-    
-    int count = objc_getClassList(NULL, 0);
-    
-    if (count <= 0) {
-        
-        @throw@"Couldn't retrieve Obj-C class-list";
-        
-        return @[defaultClass];
-    }
-    
-    NSMutableArray *output = @[].mutableCopy;
-    
-    Class *classes = (Class *) malloc(sizeof(Class) * count);
-    
-    objc_getClassList(classes, count);
-    
-    for (int i = 0; i < count; ++i) {
-        
-        if (defaultClass == class_getSuperclass(classes[i]))//子类
-        {
-            [output addObject:classes[i]];
-        }
-        
-    }
-    
-    free(classes);
-    
-    return output.copy;
-    
-}
+//- (NSArray *)findAllOf:(Class)defaultClass {
+//
+//    int count = objc_getClassList(NULL, 0);
+//
+//    if (count <= 0) {
+//
+//        @throw@"Couldn't retrieve Obj-C class-list";
+//
+//        return @[defaultClass];
+//    }
+//
+//    NSMutableArray *output = @[].mutableCopy;
+//
+//    Class *classes = (Class *) malloc(sizeof(Class) * count);
+//
+//    objc_getClassList(classes, count);
+//
+//    for (int i = 0; i < count; ++i) {
+//
+//        if (defaultClass == class_getSuperclass(classes[i]))//子类
+//        {
+//            [output addObject:classes[i]];
+//        }
+//
+//    }
+//
+//    free(classes);
+//
+//    return output.copy;
+//
+//}
 
 @end
