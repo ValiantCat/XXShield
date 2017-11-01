@@ -11,11 +11,6 @@
 #import <objc/runtime.h>
 #import "XXShieldSDK.h"
 #import "NSObject+Forward.h"
-#import "NSCache+Shield.h"
-#import "NSMutableDictionary+Shield.h"
-#import "NSMutableArray+Shield.h"
-#import "NSDictionary+Shield.h"
-#import "NSArray+Shield.h"
 #import "NSObject+KVOShield.h"
 #import "NSNotificationCenter+Shield.h"
 #import "NSTimer+Shield.h"

@@ -26,6 +26,7 @@
 		CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */; };
 		CE8331A51FA9661400CA41A4 /* NullSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A41FA9661400CA41A4 /* NullSpec.m */; };
 		CE8331A81FA9663000CA41A4 /* SDKSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A71FA9663000CA41A4 /* SDKSetup.m */; };
+		CE8331AA1FA972A400CA41A4 /* ContainerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A91FA972A400CA41A4 /* ContainerSpec.m */; };
 		CE96440C1F1F50FC004EB2F2 /* XXNotificationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96440B1F1F50FC004EB2F2 /* XXNotificationObserver.m */; };
 		CE96440F1F1F5124004EB2F2 /* XXNotificationObserved.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96440E1F1F5124004EB2F2 /* XXNotificationObserved.m */; };
 		CE9644161F1F535F004EB2F2 /* XXKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644151F1F535F004EB2F2 /* XXKVOViewController.m */; };
@@ -80,8 +81,8 @@
 		CE8331A41FA9661400CA41A4 /* NullSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NullSpec.m; sourceTree = "<group>"; };
 		CE8331A61FA9663000CA41A4 /* SDKSetup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKSetup.h; sourceTree = "<group>"; };
 		CE8331A71FA9663000CA41A4 /* SDKSetup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKSetup.m; sourceTree = "<group>"; };
+		CE8331A91FA972A400CA41A4 /* ContainerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerSpec.m; sourceTree = "<group>"; };
 		CE9644051F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTestUnrecognizedSelector.m; sourceTree = "<group>"; };
-		CE9644071F1F50A1004EB2F2 /* XXTestsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTestsContainer.m; sourceTree = "<group>"; };
 		CE96440A1F1F50FC004EB2F2 /* XXNotificationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXNotificationObserver.h; sourceTree = "<group>"; };
 		CE96440B1F1F50FC004EB2F2 /* XXNotificationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXNotificationObserver.m; sourceTree = "<group>"; };
 		CE96440D1F1F5124004EB2F2 /* XXNotificationObserved.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXNotificationObserved.h; sourceTree = "<group>"; };
@@ -218,10 +219,10 @@
 				CE9644091F1F50E1004EB2F2 /* NoticationCenter */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 				CE9644051F1F5049004EB2F2 /* XXTestUnrecognizedSelector.m */,
-				CE9644071F1F50A1004EB2F2 /* XXTestsContainer.m */,
 				CE8331A41FA9661400CA41A4 /* NullSpec.m */,
 				CE8331A61FA9663000CA41A4 /* SDKSetup.h */,
 				CE8331A71FA9663000CA41A4 /* SDKSetup.m */,
+				CE8331A91FA972A400CA41A4 /* ContainerSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -491,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8331AA1FA972A400CA41A4 /* ContainerSpec.m in Sources */,
 				CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */,
 				CE8331A51FA9661400CA41A4 /* NullSpec.m in Sources */,
 				CE8331A81FA9663000CA41A4 /* SDKSetup.m in Sources */,

@@ -35,4 +35,5 @@ describe(@"NullSpec test", ^{
         expect(allValues).to(equal(@[]));
     });
 });
+
 QuickSpecEnd
