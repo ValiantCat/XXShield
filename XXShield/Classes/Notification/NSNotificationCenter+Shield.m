@@ -6,11 +6,16 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import "NSNotificationCenter+Shield.h"
 #import "XXShieldSwizzling.h"
 
+@interface XXObserverRemover : NSObject
 
-@implementation XXObserverRemover
+@end
+
+@implementation XXObserverRemover {
+    __strong NSMutableArray *_centers;
+    __unsafe_unretained id _obs;
+}
 
 - (instancetype)initWithObserver:(id)obs {
     if (self = [super init]) {
@@ -35,6 +40,7 @@
 }
 
 @end
+
 // why autorelasePool
 // an instance life dead
 // *********************1 release property
@@ -47,6 +53,7 @@
 void addCenterForObserver(NSNotificationCenter *center ,id obs) {
     XXObserverRemover *remover = nil;
     static char removerKey;
+    
     @autoreleasepool {
         remover = objc_getAssociatedObject(obs, &removerKey);
         if (!remover) {
@@ -55,13 +62,10 @@ void addCenterForObserver(NSNotificationCenter *center ,id obs) {
         }
         [remover addCenter:center];
     }
-    
 }
-
 
 XXStaticHookClass(NSNotificationCenter, ProtectNoti,
                   void, @selector(addObserver:selector:name:object:), (id)obs, (SEL)cmd, (NSString*)name, (id)obj) {
-
     XXHookOrgin(obs, cmd, name, obj);
     addCenterForObserver(self, obs);
 }

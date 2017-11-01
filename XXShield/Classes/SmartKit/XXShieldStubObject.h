@@ -10,6 +10,10 @@
 
 @interface XXShieldStubObject : NSObject
 
+- (instancetype)init __unavailable;
+
++ (XXShieldStubObject *)shareInstance;
+
 - (BOOL)addFunc:(SEL)sel;
 
 + (BOOL)addClassFunc:(SEL)sel;

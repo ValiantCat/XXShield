@@ -10,4 +10,6 @@
 
 @interface XXNotificationObserver : NSObject
 
+- (void)noti:(NSNotification*)noti;
+
 @end

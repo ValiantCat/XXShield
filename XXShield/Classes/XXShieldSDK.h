@@ -7,9 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XXShieldDefine.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_OPTIONS(NSUInteger, EXXShieldType) {
+    EXXShieldTypeUnrecognizedSelector = 1 << 1,
+    EXXShieldTypeContainer = 1 << 2,
+    EXXShieldTypeNSNull = 1 << 3,
+    EXXShieldTypeKVO = 1 << 4,
+    EXXShieldTypeNotification = 1 << 5,
+    EXXShieldTypeTimer = 1 << 6,
+    EXXShieldTypeDangLingPointer = 1 << 7,
+    EXXShieldTypeExceptDangLingPointer = (EXXShieldTypeUnrecognizedSelector | EXXShieldTypeContainer |
+                                          EXXShieldTypeNSNull| EXXShieldTypeKVO |
+                                          EXXShieldTypeNotification | EXXShieldTypeTimer)
+};
+
+@protocol XXRecordProtocol <NSObject>
+
+- (void)recordWithReason:(NSError * )reason userInfo:(NSDictionary *)userInfo;
+
+@end
 
 @interface XXShieldSDK : NSObject
+
+/**
+ 注册汇报中心
+ 
+ @param record 汇报中心
+ */
++ (void)registerRecordHandler:(id<XXRecordProtocol>)record;
 
 /**
  注册SDK，默认只要开启就打开防Crash，如果需要DEBUG关闭，请在调用处使用条件编译
@@ -33,3 +60,6 @@
 + (void)registerStabilityWithAbility:(EXXShieldType)ability withClassNames:(nonnull NSArray<NSString *> *)classNames;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

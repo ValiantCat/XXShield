@@ -6,36 +6,29 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import "XXDanglingPonterClassService.h"
+#import "XXDanglingPonterService.h"
 #import <objc/runtime.h>
 
-@implementation XXDanglingPonterClassService
+@implementation XXDanglingPonterService
 
 + (instancetype)getInstance {
+    static XXDanglingPonterService *service = nil;
     
-    static XXDanglingPonterClassService *service = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        service = [[XXDanglingPonterClassService alloc] init];
+        service = [[XXDanglingPonterService alloc] init];
     });
-    
     return service;
 }
 
 - (instancetype)init {
-    
     self = [super init];
     if (self) {
-        [self serviceInit];
+        _classArr = @[];
+        _unDellocClassArr = [NSMutableArray array];
     }
     
     return self;
-}
-
-- (void)serviceInit {
-    
-    self.classArr = [NSArray array];
-    self.unDellocClassArr = [NSMutableArray array];
 }
 
 @end

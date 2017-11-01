@@ -9,11 +9,10 @@
 #import "XXKVOViewController.h"
 #import "Person.h"
 #import "Student.h"
-#import "XXShieldSDK.h"
+#import <XXShield/XXShield.h>
 
 @interface XXKVOViewController ()
-@property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, strong) Person   *timerPerson;
+
 @end
 
 @implementation XXKVOViewController
@@ -50,12 +49,14 @@
     //        p.name = @"Jane";
     //    });
 }
+
 - (void)testKVO2 {
     [self addObserver:[Person new ] forKeyPath:@"view" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:NULL];
     
     self.view = [UIView new]; // Crash
     // 被观察者是局部变量  触发KVOCrash
 }
+
 - (void)testKVO3 {
     
     // for test  重复添加
@@ -74,4 +75,5 @@
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
 //   NSLog(@"%@",object);
 //}
+
 @end

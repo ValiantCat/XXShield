@@ -6,20 +6,20 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import "ForwordingCenterForDanglingPoint.h"
+#import "XXDanglingPointStub.h"
 #import <objc/runtime.h>
 #import "XXShieldStubObject.h"
 #import "XXRecord.h"
 
-@implementation ForwordingCenterForDanglingPoint
+@implementation XXDanglingPointStub
 
 - (instancetype)init {
-    
     return self;
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    XXShieldStubObject *stub = [[XXShieldStubObject alloc] init];
+//    XXShieldStubObject *stub = [[XXShieldStubObject alloc] init];
+    XXShieldStubObject *stub = [XXShieldStubObject shareInstance];
     [stub addFunc:aSelector];
 
     return [[XXShieldStubObject class] instanceMethodSignatureForSelector:aSelector];

@@ -9,29 +9,27 @@
 
 #import "NSObject+DanglingPointer.h"
 #import <objc/runtime.h>
-#import "ForwordingCenterForDanglingPoint.h"
-#import "XXDanglingPonterClassService.h"
+#import "XXDanglingPointStub.h"
+#import "XXDanglingPonterService.h"
 
-static NSInteger const mostCount = 10;
+static NSInteger const mostCount = 100;
 
 @implementation NSObject (DanglingPointer)
 
-- (void)ljdanglingPointer_dealloc {
-    
+- (void)xx_danglingPointer_dealloc {
     BOOL ifClass = NO;
-    for (NSString *temClassName in [XXDanglingPonterClassService getInstance].classArr) {
-        Class temClass = objc_getClass([temClassName UTF8String]);
-        if ([self isMemberOfClass:temClass]) {
+    for (NSString *className in [XXDanglingPonterService getInstance].classArr) {
+        Class clazz = objc_getClass([className UTF8String]);
+        if ([self isMemberOfClass:clazz]) {
             ifClass = YES;
         }
-        [temClass release];
+        [clazz release];
     }
+    
     if (ifClass) {
-        
         objc_destructInstance(self);
-        object_setClass(self, [ForwordingCenterForDanglingPoint class]);
-        
-        NSMutableArray *temArr = [XXDanglingPonterClassService getInstance].unDellocClassArr;
+        object_setClass(self, [XXDanglingPointStub class]);
+        NSMutableArray *temArr = [XXDanglingPonterService getInstance].unDellocClassArr;
         if ([temArr count] >= mostCount) {
             id object = temArr[0];
             [temArr removeObjectAtIndex:0];
@@ -39,7 +37,7 @@ static NSInteger const mostCount = 10;
         }
         [temArr addObject:self];
     } else {
-        [self ljdanglingPointer_dealloc];
+        [self xx_danglingPointer_dealloc];
     }
 }
 

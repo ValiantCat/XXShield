@@ -6,10 +6,8 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import "NSNull+Shield.h"
 #import "XXShieldSwizzling.h"
-
-@implementation NSNull (Shield)
+#import <Foundation/Foundation.h>
 
 XXStaticHookClass(NSNull, ProtectNull, id, @selector(forwardingTargetForSelector:), (SEL) aSelector) {
     static NSArray *sTmpOutput = nil;
@@ -22,9 +20,7 @@ XXStaticHookClass(NSNull, ProtectNull, id, @selector(forwardingTargetForSelector
             return tmpObj;
         }
     }
-    
     return XXHookOrgin(aSelector);
 }
 XXStaticHookEnd
 
-@end
