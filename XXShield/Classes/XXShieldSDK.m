@@ -11,7 +11,6 @@
 #import <objc/runtime.h>
 #import "XXShieldSDK.h"
 #import "NSObject+KVOShield.h"
-#import "NSNotificationCenter+Shield.h"
 #import "NSTimer+Shield.h"
 #import "NSObject+DanglingPointer.h"
 #import "XXDanglingPonterClassService.h"
@@ -110,8 +109,3 @@
 }
 
 @end
-
-
-
-
-
