@@ -10,5 +10,5 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example --repo-update
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/XXShield.xcworkspace -scheme XXShield_Tests -sdk iphonesimulator11.1 -destination 'platform=iOS Simulator,name=iPhone 6s Plus,OS=11.0' ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/XXShield.xcworkspace -scheme XXShield_Tests -sdk iphonesimulator11.0 -destination 'platform=iOS Simulator,name=iPhone 6s Plus,OS=11.0' ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
