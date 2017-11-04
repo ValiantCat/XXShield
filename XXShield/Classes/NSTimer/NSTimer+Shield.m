@@ -32,8 +32,7 @@
         if (sourceTimer) {
             [sourceTimer invalidate];
         }
-        NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error target is %@ method is %@, reason : an object dealloc not invalidate Timer.",
-                            [self class], NSStringFromSelector(self.aSelector)];
+        NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error target is %@ method is %@, reason : an object dealloc not invalidate Timer.",[self class], NSStringFromSelector(self.aSelector)];
         
         [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeTimer)];
     }

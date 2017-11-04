@@ -52,7 +52,7 @@ typedef NS_OPTIONS(NSUInteger, EXXShieldType) {
 + (void)registerStabilityWithAbility:(EXXShieldType)ability;
 
 /**
- ///注册EXXShieldTypeDangLingPointer需要传入存储类名的array，暂时请不要传入系统框架类
+ ///注册EXXShieldTypeDangLingPointer需要传入存储类名的array，不支持系统框架类。
  
  @param ability ability description
  @param classNames 野指针类列表

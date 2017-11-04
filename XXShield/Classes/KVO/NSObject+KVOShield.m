@@ -112,8 +112,7 @@ XXStaticHookClass(NSObject, ProtectKVO, void, @selector(addObserver:forKeyPath:o
     }
     
     NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
-    // 第一次的时候将KVOProxy添加为真正的观察者
-    if (os.count == 0) { // (包括了 observers == nil 和 count == 0)
+    if (os.count == 0) {
         os = [[NSHashTable alloc] initWithOptions:(NSPointerFunctionsWeakMemory) capacity:0];
         [os addObject:observer];
         
@@ -123,13 +122,11 @@ XXStaticHookClass(NSObject, ProtectKVO, void, @selector(addObserver:forKeyPath:o
     }
     
     if ([os containsObject:observer]) {
-        // 找到同样的观察者 不重复添加
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO add Observer to many timers.",
                             [self class], XXSEL2Str(@selector(addObserver:forKeyPath:options:context:))];
         
         [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeKVO)];
     } else {
-        // 以后添加观察者直接往容器里面更新元素就行了
         [os addObject:observer];
     }
 }
@@ -141,17 +138,14 @@ XXStaticHookClass(NSObject, ProtectKVO, void, @selector(removeObserver:forKeyPat
     NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
     
     if (os.count == 0) {
-        // 未找到观察者
-        
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO remove Observer to many times.",
                             [self class], XXSEL2Str(@selector(removeObserver:forKeyPath:))];
-        
         [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeKVO)];
         return;
     }
-    // 找到了观察者 移除
+    
     [os removeObject:observer];
-    // 为空时移除真正的观察者
+    
     if (os.count == 0) {
         XXHookOrgin(self.kvoProxy, keyPath);
         [self.kvoProxy.kvoInfoMap removeObjectForKey:keyPath];

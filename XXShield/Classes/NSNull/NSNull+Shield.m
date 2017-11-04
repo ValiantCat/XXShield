@@ -7,7 +7,6 @@
 //
 
 #import "XXShieldSwizzling.h"
-#import <Foundation/Foundation.h>
 
 XXStaticHookClass(NSNull, ProtectNull, id, @selector(forwardingTargetForSelector:), (SEL) aSelector) {
     static NSArray *sTmpOutput = nil;

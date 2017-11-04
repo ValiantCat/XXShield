@@ -21,6 +21,7 @@ XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
     
 }
 XXStaticHookEnd
+
 XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, void, @selector(setObject:forKeyedSubscript:), (id)anObject, (id<NSCopying>)aKey ) {
     if (anObject && aKey) {
         XXHookOrgin(anObject,aKey);
@@ -30,10 +31,8 @@ XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
         
         [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
     }
-    
 }
 XXStaticHookEnd
-
 
 XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, void, @selector(removeObjectForKey:), (id<NSCopying>)aKey ) {
     if (aKey) {

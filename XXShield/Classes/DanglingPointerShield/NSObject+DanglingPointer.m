@@ -7,8 +7,8 @@
 //
 
 
-#import "NSObject+DanglingPointer.h"
 #import <objc/runtime.h>
+#import "NSObject+DanglingPointer.h"
 #import "XXDanglingPointStub.h"
 #import "XXDanglingPonterService.h"
 
