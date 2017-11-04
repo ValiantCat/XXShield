@@ -6,7 +6,6 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "XXShieldSwizzling.h"
 #import "XXRecord.h"
 

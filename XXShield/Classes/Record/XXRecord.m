@@ -21,7 +21,11 @@ static id<XXRecordProtocol> __record;
                     errorType:(EXXShieldType)type {
     
     NSDictionary<NSString *, id> *errorInfo = @{ NSLocalizedDescriptionKey : (reason.length ? reason : @"未标识原因" )};
-    NSError *error = [NSError errorWithDomain:@"com.xxshield" code:-type userInfo:errorInfo];
+    
+    NSError *error = [NSError errorWithDomain:[NSString stringWithFormat:@"com.xxshield.%@",
+                                               [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"]]
+                                         code:-type
+                                     userInfo:errorInfo];
     [__record recordWithReason:error userInfo:userInfo];
 }
 

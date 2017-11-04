@@ -21,14 +21,14 @@ XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, id, @selecto
 }
 XXStaticHookEnd
 
-XXStaticHookPrivateClass(__NSArrayM, NSMutableArray * , ProtectCont, void, @selector(addObject:), (id)anObject ) {
+XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, void, @selector(addObject:), (id)anObject ) {
     if (anObject) {
         XXHookOrgin(anObject);
     }
 }
 XXStaticHookEnd
 
-XXStaticHookPrivateClass(__NSArrayM,NSMutableArray *, ProtectCont, void, @selector(insertObject:atIndex:), (id)anObject, (NSUInteger)index) {
+XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, void, @selector(insertObject:atIndex:), (id)anObject, (NSUInteger)index) {
     if (anObject) {
         XXHookOrgin(anObject, index);
     }

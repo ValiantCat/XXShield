@@ -23,7 +23,7 @@
 
 - (void)recordWithReason:(NSError *)reason userInfo:(NSDictionary *)userInfo {
     NSLog(@"----------------------------------------------------------------------------------------------------");
-    NSLog(@"crashLytics catch fatalError - error is %@, additional UserInfo is %@", reason, userInfo);
+    NSLog(@"XXShield has catch a non-fatal error: error is %@, additional userInfo is %@", reason, userInfo);
 }
 
 @end

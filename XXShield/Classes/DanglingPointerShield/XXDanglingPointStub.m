@@ -18,7 +18,6 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-//    XXShieldStubObject *stub = [[XXShieldStubObject alloc] init];
     XXShieldStubObject *stub = [XXShieldStubObject shareInstance];
     [stub addFunc:aSelector];
 
@@ -26,14 +25,12 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    
     NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : DangLingPointer .",
                         [self class], NSStringFromSelector(_cmd)];
     
     [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeDangLingPointer)];
-    [anInvocation invokeWithTarget:[XXShieldStubObject new]];
+    [anInvocation invokeWithTarget:[XXShieldStubObject shareInstance]];
 }
-
 
 @end
 

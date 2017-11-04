@@ -26,9 +26,9 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testKVO1];
-    //    [self testKVO2];
-    //        [self testKVO3];
+//    [self testKVO1];
+//        [self testKVO2];
+            [self testKVO3];
 }
 - (void)testKVO1 {
     //name:

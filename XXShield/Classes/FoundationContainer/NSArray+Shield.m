@@ -6,7 +6,6 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "XXShieldSwizzling.h"
 #import "XXRecord.h"
@@ -24,22 +23,22 @@
  @return safe
  */
 
-XXStaticHookClass(NSArray, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
+XXStaticHookClass(NSArray, ProtectCont, id, @selector(objectAtIndex:), (NSUInteger)index) {
     #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 
-XXStaticHookPrivateClass(__NSSingleObjectArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
+XXStaticHookPrivateClass(__NSSingleObjectArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndex:), (NSUInteger)index) {
     #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 
-XXStaticHookPrivateClass(__NSArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndexedSubscript:),(NSUInteger)index) {
+XXStaticHookPrivateClass(__NSArrayI, NSArray *, ProtectCont, id, @selector(objectAtIndexedSubscript:), (NSUInteger)index) {
     #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
 
-XXStaticHookPrivateClass(__NSArray0, NSArray *, ProtectCont, id, @selector(objectAtIndex:),(NSUInteger)index) {
+XXStaticHookPrivateClass(__NSArray0, NSArray *, ProtectCont, id, @selector(objectAtIndex:), (NSUInteger)index) {
     #include "NSArrayObjectAtIndex.h"
 }
 XXStaticHookEnd
