@@ -6,19 +6,19 @@
 //  Copyright © 2017年 ValiantCat. All rights reserved.
 //
 
-#import "XXTestObject.h"
+#import "Person.h"
 
 QuickSpecBegin(DanglingPointerSpec)
 
 describe(@"Notification test", ^{
     it(@"should avoid crash by send message to a danglingPointer.", ^{
-        __unsafe_unretained id obj = nil;
+        __unsafe_unretained Person *obj = nil;
             @autoreleasepool {
-                XXTestObject *o = [[XXTestObject alloc] init];
+                Person *o = [[Person alloc] init];
                 obj = o;
                 [o release];
             }
-        int result = [obj performSelector:@selector(someDoesnotExistMethod)];
+        int result = [obj performSelector:@selector(sayHello)];
         expect(result).to(equal(0));
     });
 });

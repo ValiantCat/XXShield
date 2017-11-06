@@ -7,7 +7,7 @@ for (int i = 0; i < cnt; i++) {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : Array constructor appear nil ",
                             [self class], XXSEL2Str(@selector(arrayWithObjects:count:))];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
         continue;
     }
     newObjects[newObjsIndex++] = objc;

@@ -11,31 +11,37 @@
 #import "NSObject+DanglingPointer.h"
 #import "XXDanglingPointStub.h"
 #import "XXDanglingPonterService.h"
+#import <list>
 
-static NSInteger const mostCount = 100;
+static NSInteger const threshold = 100;
+
+static std::list<id> undellocedList;
 
 @implementation NSObject (DanglingPointer)
 
 - (void)xx_danglingPointer_dealloc {
-    BOOL ifClass = NO;
+    Class selfClazz = object_getClass(self);
+    
+    BOOL needProtect = NO;
     for (NSString *className in [XXDanglingPonterService getInstance].classArr) {
         Class clazz = objc_getClass([className UTF8String]);
-        if ([self isMemberOfClass:clazz]) {
-            ifClass = YES;
+        if (clazz == selfClazz) {
+            needProtect = YES;
+            break;
         }
-        [clazz release];
     }
     
-    if (ifClass) {
+    if (needProtect) {
         objc_destructInstance(self);
         object_setClass(self, [XXDanglingPointStub class]);
-        NSMutableArray *temArr = [XXDanglingPonterService getInstance].unDellocClassArr;
-        if ([temArr count] >= mostCount) {
-            id object = temArr[0];
-            [temArr removeObjectAtIndex:0];
-            object_dispose(object);
+        
+        undellocedList.size();
+        if (undellocedList.size() >= threshold) {
+            id object = undellocedList.front();
+            undellocedList.pop_front();
+            free(object);
         }
-        [temArr addObject:self];
+        undellocedList.push_back(self);
     } else {
         [self xx_danglingPointer_dealloc];
     }

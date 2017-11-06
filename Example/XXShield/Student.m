@@ -9,7 +9,9 @@
 #import "Student.h"
 
 @implementation Student
+
 - (void)dealloc {
     NSLog(@"student dealloced");
 }
+
 @end

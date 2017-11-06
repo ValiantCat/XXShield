@@ -16,7 +16,7 @@ XXStaticHookClass(NSCache, ProtectCont, void, @selector(setObject:forKey:), (id)
     } else {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : key or value appear nil- key is %@, obj is %@",
                             [self class], XXSEL2Str(@selector(setObject:forKey:)),key, obj];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
     }
 }
 XXStaticHookEnd
@@ -27,7 +27,7 @@ XXStaticHookClass(NSCache, ProtectCont, void, @selector(setObject:forKey:cost:),
     } else {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : key or value appear nil- key is %@, obj is %@",
                             [self class], XXSEL2Str(@selector(setObject:forKey:cost:)), key, obj];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
     }
 }
 XXStaticHookEnd

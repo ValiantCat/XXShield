@@ -17,7 +17,6 @@ static id<XXRecordProtocol> __record;
 }
 
 + (void)recordFatalWithReason:(nullable NSString *)reason
-                     userinfo:(nullable NSDictionary<NSString *, id> *)userInfo
                     errorType:(EXXShieldType)type {
     
     NSDictionary<NSString *, id> *errorInfo = @{ NSLocalizedDescriptionKey : (reason.length ? reason : @"未标识原因" )};
@@ -26,7 +25,7 @@ static id<XXRecordProtocol> __record;
                                                [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"]]
                                          code:-type
                                      userInfo:errorInfo];
-    [__record recordWithReason:error userInfo:userInfo];
+    [__record recordWithReason:error];
 }
 
 @end

@@ -25,7 +25,7 @@ typedef NS_OPTIONS(NSUInteger, EXXShieldType) {
 
 @protocol XXRecordProtocol <NSObject>
 
-- (void)recordWithReason:(NSError * )reason userInfo:(NSDictionary *)userInfo;
+- (void)recordWithReason:(NSError *)reason;
 
 @end
 

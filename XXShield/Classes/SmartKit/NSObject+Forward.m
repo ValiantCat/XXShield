@@ -6,12 +6,24 @@
 //  Copyright © 2017年 XXShield. All rights reserved.
 //
 #import <objc/runtime.h>
+#import <dlfcn.h>
 #import "XXShieldStubObject.h"
 #import "XXRecord.h"
 #import "XXShieldSwizzling.h"
 
 XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector:), (SEL)aSelector) {
-    // 1 如果是NSSNumber 和NSString没找到就是类型不对  切换下类型就好了
+    static struct dl_info app_info;
+    if (app_info.dli_saddr == NULL) {
+        dladdr((__bridge void *)[UIApplication.sharedApplication.delegate class], &app_info);
+    }
+    struct dl_info self_info;
+    dladdr((__bridge void *)[self class], &self_info);
+    
+    //    ignore system class
+    if (strcmp(app_info.dli_fname, self_info.dli_fname)) {
+        return XXHookOrgin(aSelector);
+    }
+    
     if ([self isKindOfClass:[NSNumber class]] && [NSString instancesRespondToSelector:aSelector]) {
         NSNumber *number = (NSNumber *)self;
         NSString *str = [number stringValue];
@@ -34,7 +46,7 @@ XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector
         
         NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error.target is %@ method is %@, reason : method forword to SmartFunction Object default implement like send message to nil.",
                             [self class], NSStringFromSelector(aSelector)];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeUnrecognizedSelector];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeUnrecognizedSelector];
         
         return stub;
     }
@@ -43,7 +55,7 @@ XXStaticHookEnd
 
 XXStaticHookMetaClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector:), (SEL)aSelector) {
     BOOL aBool = [self respondsToSelector:aSelector];
-    // 获取消息签名
+    
     NSMethodSignature *signatrue = [self methodSignatureForSelector:aSelector];
     
     if (aBool || signatrue) {
@@ -52,7 +64,7 @@ XXStaticHookMetaClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSele
         [XXShieldStubObject addClassFunc:aSelector];
         NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error.target is %@ method is %@, reason : method forword to SmartFunction Object default implement like send message to nil.",
                             [self class], NSStringFromSelector(aSelector) ];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeUnrecognizedSelector];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeUnrecognizedSelector];
         
         return [XXShieldStubObject class];
     }

@@ -13,7 +13,7 @@ XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, id, @selecto
     if (index >= self.count) {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of marray ",
                             [self class], XXSEL2Str(@selector(objectAtIndex:)),@(index), @(self.count)];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
         return nil;
     }
     
@@ -40,7 +40,7 @@ XXStaticHookPrivateClass(__NSArrayM,NSMutableArray *, ProtectCont, void, @select
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of marray ",
                             [self class], XXSEL2Str(@selector(removeObjectAtIndex:)) ,@(index), @(self.count)];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
     } else {
         XXHookOrgin(index);
     }
@@ -52,14 +52,14 @@ XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, void, @selec
         if (idx >= self.count) {
             NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of marray ",
                                 [self class], XXSEL2Str(@selector(setObject:atIndexedSubscript:)) ,@(idx), @(self.count)];
-            [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+            [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
         } else {
             XXHookOrgin(obj, idx);
         }
     } else {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : object appear nil obj is %@",
                             [self class], XXSEL2Str(@selector(setObject:atIndexedSubscript:)), obj];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeContainer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
     }
 }
 XXStaticHookEnd

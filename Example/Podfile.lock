@@ -1,7 +1,7 @@
 PODS:
   - Nimble (7.0.2)
   - Quick (1.2.0)
-  - XXShield (1.0.1)
+  - XXShield (2.0.2)
 
 DEPENDENCIES:
   - Nimble
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  XXShield: d82e57f3dbfda50d8efa4f6f9354b0cd56cf5edf
+  XXShield: 94bfeeb4254504995d88fb106f55dc2a1e55c966
 
 PODFILE CHECKSUM: cb0f187cc3e5c397008a335d15152f7845281ec0
 

@@ -146,7 +146,7 @@ XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector
         
         NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error.target is %@ method is %@, reason : method forword to SmartFunction Object default implement like send message to nil.",
                             [self class], NSStringFromSelector(aSelector)];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeUnrecognizedSelector];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeUnrecognizedSelector];
         
         return stub;
     }
@@ -254,14 +254,14 @@ if (self.count == 0) {
     
     NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of array ",
                         [self class], XXSEL2Str(@selector(objectAtIndex:)), @(index), @(self.count)];
-    [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+    [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
     return nil;
 }
 
 if (index >= self.count) {
     NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of array ",
                         [self class], XXSEL2Str(@selector(objectAtIndex:)), @(index), @(self.count)];
-    [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+    [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
     return nil;
 }
 
@@ -436,7 +436,7 @@ XXStaticHookEnd
         NSString *reason = [NSString stringWithFormat:@"*****Warning***** logic error target is %@ method is %@, reason : an object dealloc not invalidate Timer.",
                             [self class], NSStringFromSelector(self.aSelector)];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeTimer)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeTimer)];
     }
 }
 

@@ -12,8 +12,6 @@
 
 @property (nonatomic, copy) NSArray<NSString *> *classArr;
 
-@property (nonatomic, strong) NSMutableArray *unDellocClassArr;
-
 + (instancetype)getInstance;
 
 @end
