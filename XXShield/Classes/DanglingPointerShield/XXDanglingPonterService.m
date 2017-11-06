@@ -25,9 +25,7 @@
     self = [super init];
     if (self) {
         _classArr = @[];
-        _unDellocClassArr = [NSMutableArray array];
     }
-    
     return self;
 }
 

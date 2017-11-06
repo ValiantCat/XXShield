@@ -28,7 +28,7 @@
     NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : DangLingPointer .",
                         [self class], NSStringFromSelector(_cmd)];
     
-    [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeDangLingPointer)];
+    [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeDangLingPointer)];
     [anInvocation invokeWithTarget:[XXShieldStubObject shareInstance]];
 }
 

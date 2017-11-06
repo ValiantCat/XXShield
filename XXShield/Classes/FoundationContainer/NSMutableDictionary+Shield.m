@@ -16,7 +16,7 @@ XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : key or value appear nil- key is %@, obj is %@",
                             [self class], XXSEL2Str(@selector(setObject:forKey:)),aKey, anObject];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
     }
     
 }
@@ -29,7 +29,7 @@ XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : key or value appear nil- key is %@, obj is %@",
                             [self class], XXSEL2Str(@selector(setObject:forKeyedSubscript:)),aKey, anObject];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
     }
 }
 XXStaticHookEnd
@@ -41,7 +41,7 @@ XXStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : key appear nil- key is %@.",
                             [self class], XXSEL2Str(@selector(setObject:forKey:)),aKey];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+        [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
     }
     
 }

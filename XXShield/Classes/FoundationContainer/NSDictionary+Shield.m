@@ -21,7 +21,7 @@ XXStaticHookMetaClass(NSDictionary, ProtectCont, NSDictionary *, @selector(dicti
         if (tmpItem == nil || tmpKey == nil) {
             NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : NSDictionary constructor appear nil",
                                 [self class], XXSEL2Str(@selector(dictionaryWithObjects:forKeys:count:))];
-            [XXRecord recordFatalWithReason:reason userinfo:nil errorType:EXXShieldTypeContainer];
+            [XXRecord recordFatalWithReason:reason errorType:EXXShieldTypeContainer];
             continue;
         }
         newObjects[index] = objects[i];

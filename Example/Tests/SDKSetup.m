@@ -7,7 +7,7 @@
 //
 
 #import <XXShield/XXShieldSDK.h>
-#import "XXTestObject.h"
+#import "Person.h"
 
 @interface SDKSetup : NSObject <XXRecordProtocol>
 
@@ -17,13 +17,13 @@
 
 + (void)load {
     [XXShieldSDK registerRecordHandler:[self new]];
-    [XXShieldSDK registerStabilityWithAbility:(EXXShieldTypeDangLingPointer) withClassNames:@[NSStringFromClass([XXTestObject class])]];
+    [XXShieldSDK registerStabilityWithAbility:(EXXShieldTypeDangLingPointer) withClassNames:@[NSStringFromClass([Person class])]];
     [XXShieldSDK registerStabilitySDK];
 }
 
-- (void)recordWithReason:(NSError *)reason userInfo:(NSDictionary *)userInfo {
+- (void)recordWithReason:(NSError *)reason {
     NSLog(@"----------------------------------------------------------------------------------------------------");
-    NSLog(@"XXShield has catch a non-fatal error: error is %@, additional userInfo is %@", reason, userInfo);
+    NSLog(@"XXShield has catch a non-fatal error: error is %@", reason);
 }
 
 @end

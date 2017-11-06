@@ -72,7 +72,7 @@ static void(*__xx_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
             [observer observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         } @catch (NSException *exception) {
             NSString *reason = [NSString stringWithFormat:@"non fatal Error%@",[exception description]];
-            [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeKVO)];
+            [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
         }
     }
 }
@@ -125,7 +125,7 @@ XXStaticHookClass(NSObject, ProtectKVO, void, @selector(addObserver:forKeyPath:o
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO add Observer to many timers.",
                             [self class], XXSEL2Str(@selector(addObserver:forKeyPath:options:context:))];
         
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeKVO)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
     } else {
         [os addObject:observer];
     }
@@ -140,7 +140,7 @@ XXStaticHookClass(NSObject, ProtectKVO, void, @selector(removeObserver:forKeyPat
     if (os.count == 0) {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO remove Observer to many times.",
                             [self class], XXSEL2Str(@selector(removeObserver:forKeyPath:))];
-        [XXRecord recordFatalWithReason:reason userinfo:nil errorType:(EXXShieldTypeKVO)];
+        [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
         return;
     }
     

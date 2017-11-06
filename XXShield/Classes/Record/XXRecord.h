@@ -21,11 +21,8 @@
  汇报Crash
 
  @param reason Sting 原因， maybe nil
- @param userInfo 额外的信息 maybe nil
  */
-
 + (void)recordFatalWithReason:(nullable NSString *)reason
-                     userinfo:(nullable NSDictionary<NSString *, id> *)userInfo
                     errorType:(EXXShieldType)type;
 
 @end
