@@ -103,6 +103,7 @@ describe(@"Container test", ^{
             [arr insertObject:nilValue atIndex:10];
             expect(arr).to(equal(@[@1, @3]));
         });
+        
         it(@"should avoid crash by using setObject:atIndexedSubscript: while object appear nil or idx out of bounds.", ^{
             NSMutableArray *arr = @[].mutableCopy;
             NSString *clazzName = [[NSString alloc] initWithUTF8String:object_getClassName(arr)];

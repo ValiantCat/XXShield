@@ -49,7 +49,7 @@ XXStaticHookEnd
 
 XXStaticHookPrivateClass(__NSArrayM, NSMutableArray *, ProtectCont, void, @selector(setObject:atIndexedSubscript:), (id) obj, (NSUInteger) idx) {
     if (obj) {
-        if (idx >= self.count) {
+        if (idx > self.count) {
             NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@,reason : index %@ out of count %@ of marray ",
                                 [self class], XXSEL2Str(@selector(setObject:atIndexedSubscript:)) ,@(idx), @(self.count)];
             [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeContainer)];
