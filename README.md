@@ -20,7 +20,7 @@
 
 # 目前已经实现的功能
 
-1. Unrecoginzed Selector Crash
+1. Unrecognized Selector Crash
 2. KVO Crash
 3. Container Crash
 4. NSNotification Crash
