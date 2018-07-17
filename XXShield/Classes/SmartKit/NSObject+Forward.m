@@ -16,11 +16,11 @@ XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector
     if (app_info.dli_saddr == NULL) {
         dladdr((__bridge void *)[UIApplication.sharedApplication.delegate class], &app_info);
     }
-    struct dl_info self_info;
+    struct dl_info self_info = {0};
     dladdr((__bridge void *)[self class], &self_info);
     
     //    ignore system class
-    if (strcmp(app_info.dli_fname, self_info.dli_fname)) {
+    if (self_info.dli_fname == NULL || strcmp(app_info.dli_fname, self_info.dli_fname)) {
         return XXHookOrgin(aSelector);
     }
     
