@@ -2,6 +2,10 @@
 
 # 修改日志
 
+## 2.2.0
+
+修复dli_frame 造成的crash问题
+
 ## 2.1.1
 
 修复NSMutableArray在插入索引切好为count的时候导致插入失败的bug

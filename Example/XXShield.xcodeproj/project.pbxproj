@@ -25,6 +25,7 @@
 		C59997AEF8BEC92B666B22AB /* Pods_XXShield_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */; };
 		CE0438D01FB044C10025F7C7 /* SDKSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A71FA9663000CA41A4 /* SDKSetup.m */; };
 		CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */; };
+		CE1C77A220FDB0D700377C2A /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = CE1C77A120FDB0D700377C2A /* Changelog.md */; };
 		CE648A941FA9CE7E00B6BABD /* UnrecognizedSelectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE648A931FA9CE7E00B6BABD /* UnrecognizedSelectorSpec.m */; };
 		CE648A961FA9D14300B6BABD /* NotificationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE648A951FA9D14300B6BABD /* NotificationSpec.m */; };
 		CE648A981FA9EC9F00B6BABD /* DanglingPointerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = CE648A971FA9EC9F00B6BABD /* DanglingPointerSpec.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -78,6 +79,7 @@
 		A3E63806E16CFC48D7969CE1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE10249D1FA8A18C00F0EDA7 /* XXShield_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXShield_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXSpec.swift; sourceTree = "<group>"; };
+		CE1C77A120FDB0D700377C2A /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Changelog.md; path = ../Changelog.md; sourceTree = "<group>"; };
 		CE648A931FA9CE7E00B6BABD /* UnrecognizedSelectorSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnrecognizedSelectorSpec.m; sourceTree = "<group>"; };
 		CE648A951FA9D14300B6BABD /* NotificationSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationSpec.m; sourceTree = "<group>"; };
 		CE648A971FA9EC9F00B6BABD /* DanglingPointerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanglingPointerSpec.m; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				CE1C77A120FDB0D700377C2A /* Changelog.md */,
 				46EEA05012F18039114BAB98 /* XXShield.podspec */,
 				A3E63806E16CFC48D7969CE1 /* README.md */,
 				D5D64BCBDD700A05544EEBE3 /* LICENSE */,
@@ -261,7 +264,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				9DFC84AFE18390AD724CB597 /* [CP] Embed Pods Frameworks */,
-				42B3BCAD6BAF336BE8BFE19A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,7 +283,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				3BB633443FE7E9D8DB942170 /* [CP] Embed Pods Frameworks */,
-				2B01D7E25C83D2680B5AF578 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +338,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				CE1C77A220FDB0D700377C2A /* Changelog.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,21 +353,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B01D7E25C83D2680B5AF578 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3BB633443FE7E9D8DB942170 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,21 +371,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42B3BCAD6BAF336BE8BFE19A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6104433839D6A71BF719C7D4 /* [CP] Check Pods Manifest.lock */ = {

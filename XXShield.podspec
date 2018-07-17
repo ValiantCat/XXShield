@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'XXShield'
-  s.version          = '2.1.1'
+  s.version          = '2.2.0'
   s.summary          = 'Avoid Crash'
   s.description      = <<-DESC
   1. unrecoginzed Selector Crash
@@ -36,7 +36,7 @@ DESC
   ]
   s.pod_target_xcconfig = {
     'CLANG_WARN_STRICT_PROTOTYPES' => 'NO',
-    'SWIFT_VERSION' => '3.2'
+#    'SWIFT_VERSION' => ''
   }
   
 end
