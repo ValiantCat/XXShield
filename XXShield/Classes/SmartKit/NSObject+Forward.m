@@ -11,10 +11,12 @@
 #import "XXRecord.h"
 #import "XXShieldSwizzling.h"
 
+extern int main(int argc, char * argv[]);
+
 XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector:), (SEL)aSelector) {
     static struct dl_info app_info;
     if (app_info.dli_saddr == NULL) {
-        dladdr((__bridge void *)[UIApplication.sharedApplication.delegate class], &app_info);
+        dladdr(main, &app_info);
     }
     struct dl_info self_info = {0};
     dladdr((__bridge void *)[self class], &self_info);
