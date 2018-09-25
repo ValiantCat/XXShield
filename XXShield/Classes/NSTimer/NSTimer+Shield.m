@@ -40,38 +40,18 @@
 
 @end
 
-@interface NSTimer (ShieldProperty)
-
-@property (nonatomic, strong) XXTimerProxy *timerProxy;
-
-@end
-
-@implementation NSTimer (Shield)
-
-- (void)setTimerProxy:(XXTimerProxy *)timerProxy {
-    objc_setAssociatedObject(self, @selector(timerProxy), timerProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (XXTimerProxy *)timerProxy {
-    return objc_getAssociatedObject(self, @selector(timerProxy));
-}
-
-@end
-
 XXStaticHookMetaClass(NSTimer, ProtectTimer,  NSTimer * ,@selector(scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:),
-                      (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)yesOrNo ) {
-    if (yesOrNo) {
+                      (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)repeats ) {
+    if (repeats) {
         NSTimer *timer =  nil ;
         @autoreleasepool {
             XXTimerProxy *proxy = [XXTimerProxy new];
             proxy.target = aTarget;
             proxy.aSelector = aSelector;
-            timer.timerProxy = proxy;
-            timer = XXHookOrgin(ti, proxy, @selector(trigger:), userInfo, yesOrNo);
-            proxy.sourceTimer = timer;
+            proxy.sourceTimer = XXHookOrgin(ti, proxy, @selector(trigger:), userInfo, repeats);
         }
         return  timer;
     }
-    return XXHookOrgin(ti, aTarget, aSelector, userInfo, yesOrNo);
+    return XXHookOrgin(ti, aTarget, aSelector, userInfo, repeats);
 }
 XXStaticHookEnd
