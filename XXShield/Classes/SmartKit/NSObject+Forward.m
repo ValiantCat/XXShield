@@ -11,16 +11,28 @@
 #import "XXRecord.h"
 #import "XXShieldSwizzling.h"
 
+static bool startsWith(const char *pre, const char *str) {
+    size_t lenpre = strlen(pre),
+    lenstr = strlen(str);
+    return lenstr < lenpre ? false : strncmp(pre, str, lenpre) == 0;
+}
+
+
 XXStaticHookClass(NSObject, ProtectFW, id, @selector(forwardingTargetForSelector:), (SEL)aSelector) {
-    static struct dl_info app_info;
-    if (app_info.dli_saddr == NULL) {
-        dladdr((__bridge void *)[UIApplication.sharedApplication.delegate class], &app_info);
-    }
+    static dispatch_once_t onceToken;
+    static char *app_bundle_path = NULL;
+    
+    dispatch_once(&onceToken, ^{
+        const char *path = [[[NSBundle mainBundle] bundlePath] UTF8String];
+        app_bundle_path = malloc(strlen(path) + 1);
+        strcpy(app_bundle_path, path);
+    });
+    
     struct dl_info self_info = {0};
     dladdr((__bridge void *)[self class], &self_info);
     
     //    ignore system class
-    if (self_info.dli_fname == NULL || strcmp(app_info.dli_fname, self_info.dli_fname)) {
+    if (self_info.dli_fname == NULL || !startsWith(app_bundle_path, self_info.dli_fname)) {
         return XXHookOrgin(aSelector);
     }
     

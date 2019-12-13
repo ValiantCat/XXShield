@@ -25,10 +25,13 @@ return;  \
 #import <objc/runtime.h>
 #import "XXRecord.h"
 
+#import <pthread/pthread.h>
+
 static void(*__xx_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,NSObject *observer ,NSString *keyPath) = ((void*)0);
 
 @interface XXKVOProxy : NSObject {
     __unsafe_unretained NSObject *_observed;
+    pthread_mutex_t _mutex;
 }
 
 /**
@@ -40,40 +43,71 @@ static void(*__xx_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
 
 @implementation XXKVOProxy
 
++ (instancetype)proxyWithObserverd:(NSObject *)observed {
+    static dispatch_once_t onceToken;
+    static NSMapTable *proxyTable;
+    static dispatch_semaphore_t lock;
+    
+    dispatch_once(&onceToken, ^{
+        proxyTable = [NSMapTable weakToWeakObjectsMapTable];
+        lock = dispatch_semaphore_create(1);
+    });
+    XXKVOProxy *proxy = nil;
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    proxy = [proxyTable objectForKey:observed];
+    if (proxy == nil) {
+        proxy = [[XXKVOProxy alloc] initWithObserverd:observed];
+        [proxyTable setObject:proxy forKey:observed];
+    }
+    dispatch_semaphore_signal(lock);
+    return proxy;
+}
+
 - (instancetype)initWithObserverd:(NSObject *)observed {
     if (self = [super init]) {
         _observed = observed;
+        _kvoInfoMap = [NSMutableDictionary dictionary];
+
+        pthread_mutexattr_t mta;
+        pthread_mutexattr_init(&mta);
+        pthread_mutexattr_settype(&mta, PTHREAD_MUTEX_RECURSIVE);
+        pthread_mutex_init(&_mutex, &mta);
+        pthread_mutexattr_destroy(&mta);
     }
     return self;
 }
 
 - (void)dealloc {
     @autoreleasepool {
-        NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  self.kvoInfoMap.copy;
+        NSDictionary<NSString *, NSHashTable<NSObject *> *> *kvoinfos =  _kvoInfoMap.copy;
         for (NSString *keyPath in kvoinfos) {
             // call original  IMP
             __xx_hook_orgin_function_removeObserver(_observed,@selector(removeObserver:forKeyPath:),self, keyPath);
         }
     }
-}
-
-- (NSMutableDictionary<NSString *,NSHashTable<NSObject *> *> *)kvoInfoMap {
-    if (!_kvoInfoMap) {
-        _kvoInfoMap = @{}.mutableCopy;
-    }
-    return  _kvoInfoMap;
+    pthread_mutex_destroy(&_mutex);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     // dispatch to origina observers
-    NSHashTable<NSObject *> *os = self.kvoInfoMap[keyPath];
-    for (NSObject  *observer in os) {
-        @try {
-            [observer observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-        } @catch (NSException *exception) {
-            NSString *reason = [NSString stringWithFormat:@"non fatal Error%@",[exception description]];
-            [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
+    [self lock:^(NSMutableDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfoMap) {
+        NSHashTable<NSObject *> *os = [kvoInfoMap[keyPath] copy];
+        for (NSObject  *observer in os) {
+            @try {
+                [observer observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+            } @catch (NSException *exception) {
+                NSString *reason = [NSString stringWithFormat:@"non fatal Error%@",[exception description]];
+                [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
+            }
         }
+    }];
+}
+
+- (void)lock:(void (^)(NSMutableDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfoMap))blk {
+    if (blk) {
+        pthread_mutex_lock(&_mutex);
+        blk(_kvoInfoMap);
+        pthread_mutex_unlock(&_mutex);
     }
 }
 
@@ -104,30 +138,37 @@ static void(*__xx_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
 XXStaticHookClass(NSObject, ProtectKVO, void, @selector(addObserver:forKeyPath:options:context:),
                   (NSObject *)observer, (NSString *)keyPath,(NSKeyValueObservingOptions)options, (void *)context) {
     @KVOADDIgnoreMarco()
-    
     if (!self.kvoProxy) {
         @autoreleasepool {
-            self.kvoProxy = [[XXKVOProxy alloc] initWithObserverd:self];
+            self.kvoProxy = [XXKVOProxy proxyWithObserverd:self];
         }
     }
     
-    NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
-    if (os.count == 0) {
-        os = [[NSHashTable alloc] initWithOptions:(NSPointerFunctionsWeakMemory) capacity:0];
-        [os addObject:observer];
-        
-        XXHookOrgin(self.kvoProxy, keyPath, options, context);
-        self.kvoProxy.kvoInfoMap[keyPath] = os;
-        return ;
-    }
-    
-    if ([os containsObject:observer]) {
+    __block BOOL contained = NO;
+    [self.kvoProxy lock:^(NSMutableDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfoMap) {
+        BOOL shouldHookOrigin = NO;
+        NSHashTable<NSObject *> *os = kvoInfoMap[keyPath];
+        if (os.count == 0) {
+            os = [[NSHashTable alloc] initWithOptions:(NSPointerFunctionsWeakMemory) capacity:0];
+            kvoInfoMap[keyPath] = os;
+            shouldHookOrigin = YES;
+        }
+        if ([os containsObject:observer]) {
+            contained = YES;
+        }
+        else {
+            [os addObject:observer];
+        }
+        if (shouldHookOrigin) {
+            // hook origin if needed after kvoInfoMap updated
+            XXHookOrgin(self.kvoProxy, keyPath, options, context);
+        }
+    }];
+    if (contained) {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO add Observer to many timers.",
                             [self class], XXSEL2Str(@selector(addObserver:forKeyPath:options:context:))];
         
         [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
-    } else {
-        [os addObject:observer];
     }
 }
 XXStaticHookEnd
@@ -135,20 +176,26 @@ XXStaticHookEnd
 XXStaticHookClass(NSObject, ProtectKVO, void, @selector(removeObserver:forKeyPath:),
                   (NSObject *)observer, (NSString *)keyPath) {
     @KVORemoveIgnoreMarco()
-    NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
-    
-    if (os.count == 0) {
+    __block BOOL removed = NO;
+    [self.kvoProxy lock:^(NSMutableDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfoMap) {
+        NSHashTable<NSObject *> *os = kvoInfoMap[keyPath];
+
+        if (os.count == 0) {
+            removed = YES;
+            return;
+        }
+        
+        [os removeObject:observer];
+        
+        if (os.count == 0) {
+            [kvoInfoMap removeObjectForKey:keyPath];
+            XXHookOrgin(self.kvoProxy, keyPath);
+        }
+    }];
+    if (removed) {
         NSString *reason = [NSString stringWithFormat:@"target is %@ method is %@, reason : KVO remove Observer to many times.",
                             [self class], XXSEL2Str(@selector(removeObserver:forKeyPath:))];
         [XXRecord recordFatalWithReason:reason errorType:(EXXShieldTypeKVO)];
-        return;
-    }
-    
-    [os removeObject:observer];
-    
-    if (os.count == 0) {
-        XXHookOrgin(self.kvoProxy, keyPath);
-        [self.kvoProxy.kvoInfoMap removeObjectForKey:keyPath];
     }
 }
 XXStaticHookEnd_SaveOri(__xx_hook_orgin_function_removeObserver)
