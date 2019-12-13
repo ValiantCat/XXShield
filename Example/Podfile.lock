@@ -1,7 +1,7 @@
 PODS:
-  - Nimble (7.0.2)
-  - Quick (1.2.0)
-  - XXShield (2.2.0)
+  - Nimble (8.0.4)
+  - Quick (2.2.0)
+  - XXShield (2.3.0)
 
 DEPENDENCIES:
   - Nimble
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - XXShield (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Nimble
     - Quick
 
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  XXShield: 31cb5badded8555e2f27f9439ca7b603c83939ce
+  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  XXShield: b0608906e060154f9078df922a665199e7cf08b3
 
-PODFILE CHECKSUM: cb0f187cc3e5c397008a335d15152f7845281ec0
+PODFILE CHECKSUM: 6250b357771a0da19b10bd2f9464a36ebd20892b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

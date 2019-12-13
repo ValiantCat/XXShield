@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6943AEE5539E092077BCA8 /* libPods-XXShield_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 515145002E145460857F5BDB /* libPods-XXShield_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,8 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		A052D4DFCCBB9E5AC22A2B54 /* Pods_XXShield_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */; };
-		C59997AEF8BEC92B666B22AB /* Pods_XXShield_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */; };
+		A8E5D137050CE7470652CD96 /* libPods-XXShield_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D23B54EBD54DFB16B679A749 /* libPods-XXShield_Example.a */; };
 		CE0438D01FB044C10025F7C7 /* SDKSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8331A71FA9663000CA41A4 /* SDKSetup.m */; };
 		CE10249F1FA8A18C00F0EDA7 /* XXSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */; };
 		CE1C77A220FDB0D700377C2A /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = CE1C77A120FDB0D700377C2A /* Changelog.md */; };
@@ -36,6 +36,7 @@
 		CE96441B1F1F5390004EB2F2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644181F1F5390004EB2F2 /* Person.m */; };
 		CE96441C1F1F5390004EB2F2 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96441A1F1F5390004EB2F2 /* Student.m */; };
 		CE9644221F1F53D2004EB2F2 /* XXTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9644211F1F53D2004EB2F2 /* XXTimerViewController.m */; };
+		CECD211A23A36E360071A7A7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD211923A36E360071A7A7 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,8 @@
 /* Begin PBXFileReference section */
 		24F7ABBBD291BB26F5220B32 /* Pods-XXShield_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3AA5DDFEFC7DA2D12EBD18CC /* Pods-XXShield_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXShield_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EEA05012F18039114BAB98 /* XXShield.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = XXShield.podspec; path = ../XXShield.podspec; sourceTree = "<group>"; };
+		515145002E145460857F5BDB /* libPods-XXShield_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXShield_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* XXShield_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XXShield_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,7 +76,6 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ED4B5E1A4E690247385A142 /* Pods-XXShield_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXShield_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XXShield_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3E63806E16CFC48D7969CE1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE10249D1FA8A18C00F0EDA7 /* XXShield_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXShield_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE10249E1FA8A18C00F0EDA7 /* XXSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXSpec.swift; sourceTree = "<group>"; };
@@ -96,6 +96,9 @@
 		CE96441A1F1F5390004EB2F2 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		CE9644201F1F53D2004EB2F2 /* XXTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTimerViewController.h; sourceTree = "<group>"; };
 		CE9644211F1F53D2004EB2F2 /* XXTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTimerViewController.m; sourceTree = "<group>"; };
+		CECD211823A36E360071A7A7 /* XXShield_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XXShield_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		CECD211923A36E360071A7A7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D23B54EBD54DFB16B679A749 /* libPods-XXShield_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXShield_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D64BCBDD700A05544EEBE3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +110,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				A052D4DFCCBB9E5AC22A2B54 /* Pods_XXShield_Example.framework in Frameworks */,
+				A8E5D137050CE7470652CD96 /* libPods-XXShield_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +121,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				C59997AEF8BEC92B666B22AB /* Pods_XXShield_Tests.framework in Frameworks */,
+				5C6943AEE5539E092077BCA8 /* libPods-XXShield_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,8 +167,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				413AF1DA80D1CD40123DE248 /* Pods_XXShield_Example.framework */,
-				91200C86A959D09414E48007 /* Pods_XXShield_Tests.framework */,
+				D23B54EBD54DFB16B679A749 /* libPods-XXShield_Example.a */,
+				515145002E145460857F5BDB /* libPods-XXShield_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,6 +192,8 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 				CE9644141F1F535F004EB2F2 /* XXKVOViewController.h */,
 				CE9644151F1F535F004EB2F2 /* XXKVOViewController.m */,
+				CECD211923A36E360071A7A7 /* File.swift */,
+				CECD211823A36E360071A7A7 /* XXShield_Example-Bridging-Header.h */,
 			);
 			name = "Example for XXShield";
 			path = XXShield;
@@ -263,7 +268,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				9DFC84AFE18390AD724CB597 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,7 +286,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				3BB633443FE7E9D8DB942170 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,9 +304,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = XX;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = ValiantCat;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						LastSwiftMigration = 1130;
+					};
 					6003F5AD195388D20070C39A = {
 						LastSwiftMigration = 0900;
 						TestTargetID = 6003F589195388D20070C39A;
@@ -315,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -353,26 +360,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3BB633443FE7E9D8DB942170 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Tests/Pods-XXShield_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6104433839D6A71BF719C7D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,24 +396,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9DFC84AFE18390AD724CB597 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/XXShield/XXShield.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XXShield.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XXShield_Example/Pods-XXShield_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -441,6 +410,7 @@
 				CE96441C1F1F5390004EB2F2 /* Student.m in Sources */,
 				CE96440C1F1F50FC004EB2F2 /* XXNotificationObserver.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				CECD211A23A36E360071A7A7 /* File.swift in Sources */,
 				CE9644161F1F535F004EB2F2 /* XXKVOViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,23 +471,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -530,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -541,30 +525,45 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -575,12 +574,17 @@
 			baseConfigurationReference = 24F7ABBBD291BB26F5220B32 /* Pods-XXShield_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XXShield/XXShield-Prefix.pch";
 				INFOPLIST_FILE = "XXShield/XXShield-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXShield/XXShield_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -590,12 +594,16 @@
 			baseConfigurationReference = 605E5EA041E249575181AD27 /* Pods-XXShield_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XXShield/XXShield-Prefix.pch";
 				INFOPLIST_FILE = "XXShield/XXShield-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XXShield/XXShield_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -604,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AA5DDFEFC7DA2D12EBD18CC /* Pods-XXShield_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -623,7 +632,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/XXShield_Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XXShield_Example.app/XXShield_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -633,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8ED4B5E1A4E690247385A142 /* Pods-XXShield_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -647,7 +657,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/XXShield_Tests-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XXShield_Example.app/XXShield_Example";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'XXShield'
-  s.version          = '2.2.0'
+  s.version          = '2.3.0'
   s.summary          = 'Avoid Crash'
   s.description      = <<-DESC
   1. unrecoginzed Selector Crash
@@ -15,8 +15,8 @@ DESC
   s.license          = { :type => 'Apache', :file => 'LICENSE' }
   s.author           = { 'ValiantCat' => '519224747@qq.com' }
   s.source           = { :git => 'https://github.com/ValiantCat/XXShield.git', :tag => s.version.to_s }
-  s.platform         = :ios, '7.0'
-  s.ios.deployment_target = '7.0'
+  s.platform         = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
   s.module_map = 'XXShield/XXShield.modulemap'
   s.public_header_files   = 'XXShield/Classes/*.h'
   s.private_header_files = 'XXShield/Classes/template/*.h'
@@ -34,8 +34,10 @@ DESC
   'XXShield/Classes/DanglingPointerShield/ForwordingCenterForDanglingPoint.m',
   'XXShield/Classes/DanglingPointerShield/XXDanglingPonterClassService.m'
   ]
+  s.libraries = 'c++'
   s.pod_target_xcconfig = {
     'CLANG_WARN_STRICT_PROTOTYPES' => 'NO',
+    'DEFINES_MODULE' => 'YES'
 #    'SWIFT_VERSION' => ''
   }
   
